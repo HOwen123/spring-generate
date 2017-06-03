@@ -1,6 +1,9 @@
 package org.spring.springboot.service;
 
 import org.spring.springboot.domain.City;
+import org.spring.springboot.domain.UserInfo;
+
+import java.util.List;
 
 /**
  * @author chenssy
@@ -9,4 +12,6 @@ import org.spring.springboot.domain.City;
  */
 public interface CityService {
     City getCityByName(String cityName);
+
+    List<UserInfo> getAllUser();
 }

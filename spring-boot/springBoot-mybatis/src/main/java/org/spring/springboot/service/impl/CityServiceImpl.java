@@ -1,10 +1,14 @@
 package org.spring.springboot.service.impl;
 
 import org.spring.springboot.dao.CityDao;
+import org.spring.springboot.dao.UserInfoDao;
 import org.spring.springboot.domain.City;
+import org.spring.springboot.domain.UserInfo;
 import org.spring.springboot.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author chenssy
@@ -17,8 +21,16 @@ public class CityServiceImpl implements CityService{
     @Autowired
     private CityDao cityDao;
 
+    @Autowired
+    private UserInfoDao userInfoDao;
+
     @Override
     public City getCityByName(String cityName) {
         return cityDao.findByName(cityName);
+    }
+
+    @Override
+    public List<UserInfo> getAllUser() {
+        return userInfoDao.getAll();
     }
 }
