@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.spring.springboot.mutilDataSource.dao.master.UserInfoDao">
+    <resultMap id="BaseResultMap" type="org.spring.springboot.mutilDataSource.domain.master.UserInfo">
+        <result column="country" property="country" />
+        <result column="region" property="region" />
+        <result column="city" property="city" />
+        <result column="sex" property="sex" />
+        <result column="eye_color" property="eyeColor" />
+        <result column="age" property="age" />
+    </resultMap>
+
+
+    <sql id="Base_Column_List">
+        country, region, city, sex,eye_color,age
+    </sql>
+
+    <select id="getAllUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from user_info
+    </select>
+
+</mapper>

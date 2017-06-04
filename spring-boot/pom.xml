@@ -17,6 +17,8 @@
     <modules>
         <module>springBoot-helloWorld</module>
         <module>../springBoot-mybatis</module>
+        <module>../springBoot-mutilDatasource</module>
+        <module>../springBoot-redis</module>
     </modules>
 
 </project>
