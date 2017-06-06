@@ -12,9 +12,9 @@
     <artifactId>spring-cloud</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>../springCloud-eurekaServer</module>
-        <module>../springCloud-eurekaClient</module>
-        <module>../springCloud-ribbonConsumer</module>
+        <module>springCloud-eurekaServer</module>
+        <module>springCloud-eurekaClient</module>
+        <module>springCloud-ribbonConsumer</module>
     </modules>
 
 

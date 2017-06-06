@@ -1,6 +1,7 @@
 package com.spring.cloud.ribbon.web;
 
 
+import com.spring.cloud.ribbon.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,10 +17,10 @@ import org.springframework.web.client.RestTemplate;
 public class ConsumerController {
 
     @Autowired
-    RestTemplate restTemplate;
+    HelloService helloService;
 
     @RequestMapping(value = "/ribbo-consumer",method = RequestMethod.GET)
     public String hello(){
-        return restTemplate.getForEntity("http://HELLO-SERVICE/hello",String.class).getBody();
+        return helloService.helloService();
     }
 }
