@@ -15,6 +15,7 @@
         <module>springCloud-eurekaServer</module>
         <module>springCloud-eurekaClient</module>
         <module>springCloud-ribbonConsumer</module>
+        <module>springCloud-feignConsumer</module>
     </modules>
 
 
