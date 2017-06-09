@@ -1,10 +1,11 @@
 package org.spring.cloud.web;
 
-import org.spring.cloud.VO.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.*;
+import com.spring.cloud.dto.User;
+import com.spring.cloud.service.HelloService;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author chenssy
@@ -12,30 +13,24 @@ import org.springframework.web.bind.annotation.*;
  * @since v1.0.0
  */
 @RestController
-public class HelloWorldController {
-
-    @Autowired
-    private DiscoveryClient client;
-
-    @RequestMapping(value = "/hello",method = RequestMethod.GET)
-    public String hello(){
-
+public class HelloWorldController implements HelloService{
+    @Override
+    public String hello() {
         return "hello";
     }
 
-    @RequestMapping(value = "/hello1",method = RequestMethod.GET)
-    public String hello(@RequestParam String name){
-
-        return "hello," + name;
+    @Override
+    public String hello(@RequestParam("name") String name) {
+        return "hello , " + name;
     }
 
-    @RequestMapping(value = "/hello2",method = RequestMethod.GET)
-    public User hello(@RequestHeader String name,@RequestHeader Integer age){
+    @Override
+    public com.spring.cloud.dto.User hello(@RequestHeader("name") String name, @RequestHeader("age") Integer age) {
         return new User(name,age);
     }
 
-    @RequestMapping(value = "/hello3",method = RequestMethod.POST)
-    public String hello(@RequestBody User user){
-        return "hello ," + user.getName() + ", age:" + user.getAge();
+    @Override
+    public String hello(@RequestBody User user) {
+        return "hello ," + user.getName() + " , " + user.getAge();
     }
 }

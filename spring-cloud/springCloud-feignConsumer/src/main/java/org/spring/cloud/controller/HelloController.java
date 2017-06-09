@@ -1,7 +1,7 @@
 package org.spring.cloud.controller;
 
-import org.spring.cloud.VO.User;
-import org.spring.cloud.service.HelloService;
+import com.spring.cloud.dto.User;
+import org.spring.cloud.service.RefactorHelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,21 +15,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
+//    @Autowired
+//    private HelloService helloService;
+
     @Autowired
-    private HelloService helloService;
+    private RefactorHelloService refactorHelloService;
 
     @RequestMapping(value = "/feign-consummer",method = RequestMethod.GET)
     public String hello(){
-        return helloService.hello();
+        return refactorHelloService.hello();
     }
 
     @RequestMapping(value = "/feign-consummer2",method = RequestMethod.GET)
     public String hello2(){
         StringBuilder sb = new StringBuilder();
-        sb.append(helloService.hello()).append("\n");
-        sb.append(helloService.hello("chenssy")).append("\n");
-        sb.append(helloService.hello("chenssy", 100)).append("\n");
-        sb.append(helloService.hello(new User("chenssy",100))).append("\n");
+        sb.append(refactorHelloService.hello()).append("\n");
+        sb.append(refactorHelloService.hello("chenssy")).append("\n");
+        sb.append(refactorHelloService.hello("chenssy", 100)).append("\n");
+        sb.append(refactorHelloService.hello(new User("chenssy",100))).append("\n");
 
         return sb.toString();
     }

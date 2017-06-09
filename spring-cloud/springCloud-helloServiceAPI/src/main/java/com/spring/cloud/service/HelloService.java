@@ -1,17 +1,16 @@
-package org.spring.cloud.service;
+package com.spring.cloud.service;
 
-import org.spring.cloud.VO.User;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import com.spring.cloud.dto.User;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * @author chenssy
- * @date 2017/6/7
+ * @date 2017/6/8
  * @since v1.0.0
  */
-@FeignClient("hello-service")
-public interface HelloService {
 
+@RequestMapping("/refactor")
+public interface HelloService {
     @RequestMapping("/hello")
     String hello();
 
