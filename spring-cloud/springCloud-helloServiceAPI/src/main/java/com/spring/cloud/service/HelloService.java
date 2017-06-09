@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/refactor")
 public interface HelloService {
     @RequestMapping("/hello")
-    String hello();
+    String hello() throws InterruptedException;
 
     @RequestMapping(value = "/hello1",method = RequestMethod.GET)
     public String hello(@RequestParam("name") String name);

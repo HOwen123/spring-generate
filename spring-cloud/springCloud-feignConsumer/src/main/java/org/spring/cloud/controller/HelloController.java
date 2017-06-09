@@ -22,12 +22,12 @@ public class HelloController {
     private RefactorHelloService refactorHelloService;
 
     @RequestMapping(value = "/feign-consummer",method = RequestMethod.GET)
-    public String hello(){
+    public String hello() throws InterruptedException {
         return refactorHelloService.hello();
     }
 
     @RequestMapping(value = "/feign-consummer2",method = RequestMethod.GET)
-    public String hello2(){
+    public String hello2() throws InterruptedException {
         StringBuilder sb = new StringBuilder();
         sb.append(refactorHelloService.hello()).append("\n");
         sb.append(refactorHelloService.hello("chenssy")).append("\n");

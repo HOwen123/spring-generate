@@ -2,10 +2,17 @@ package org.spring.cloud.web;
 
 import com.spring.cloud.dto.User;
 import com.spring.cloud.service.HelloService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Random;
 
 /**
  * @author chenssy
@@ -14,9 +21,25 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HelloWorldController implements HelloService{
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
+
     @Override
-    public String hello() {
-        return "hello";
+    public String hello() throws InterruptedException {
+
+        ServiceInstance instance = discoveryClient.getLocalServiceInstance();
+
+        int sleepTime = new Random().nextInt(2000);
+
+        logger.info("server sleepTime:" + sleepTime);
+        Thread.sleep(sleepTime);
+
+        logger.info("/hello,host:" + instance.getHost() +",service_id:" + instance.getServiceId());
+
+        return "hello world";
     }
 
     @Override
