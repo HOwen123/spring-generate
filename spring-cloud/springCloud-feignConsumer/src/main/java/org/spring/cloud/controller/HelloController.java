@@ -15,9 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-//    @Autowired
-//    private HelloService helloService;
-
     @Autowired
     private RefactorHelloService refactorHelloService;
 
@@ -36,5 +33,4 @@ public class HelloController {
 
         return sb.toString();
     }
-
 }

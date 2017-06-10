@@ -17,6 +17,7 @@
         <module>springCloud-ribbonConsumer</module>
         <module>springCloud-feignConsumer</module>
         <module>springCloud-helloServiceAPI</module>
+        <module>../springCloud-hystrix</module>
     </modules>
 
 

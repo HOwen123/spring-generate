@@ -29,17 +29,7 @@ public class HelloWorldController implements HelloService{
 
     @Override
     public String hello() throws InterruptedException {
-
-        ServiceInstance instance = discoveryClient.getLocalServiceInstance();
-
-        int sleepTime = new Random().nextInt(2000);
-
-        logger.info("server sleepTime:" + sleepTime);
-        Thread.sleep(sleepTime);
-
-        logger.info("/hello,host:" + instance.getHost() +",service_id:" + instance.getServiceId());
-
-        return "hello world";
+        return "hello world，chenssy";
     }
 
     @Override

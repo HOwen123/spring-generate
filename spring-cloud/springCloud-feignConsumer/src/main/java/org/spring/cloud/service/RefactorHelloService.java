@@ -8,6 +8,6 @@ import org.springframework.cloud.netflix.feign.FeignClient;
  * @date 2017/6/8
  * @since v1.0.0
  */
-@FeignClient("hello-service")
+@FeignClient(value = "hello-service")
 public interface RefactorHelloService extends HelloService {
 }
