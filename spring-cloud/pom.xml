@@ -20,7 +20,9 @@
         <module>springCloud-hystrix</module>
         <module>springCloud-hystrix-dashboard</module>
         <module>springCloud-zuul</module>
-        <module>../springCloud-turbine</module>
+        <module>springCloud-turbine</module>
+        <module>springCloud-configServer</module>
+        <module>springCloud-configServer</module>
     </modules>
 
 
