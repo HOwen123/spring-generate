@@ -23,6 +23,7 @@
         <module>springCloud-turbine</module>
         <module>springCloud-configServer</module>
         <module>springCloud-configServer</module>
+        <module>../springCloud-configClient</module>
     </modules>
 
 
