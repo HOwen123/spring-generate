@@ -22,8 +22,9 @@
         <module>springCloud-zuul</module>
         <module>springCloud-turbine</module>
         <module>springCloud-configServer</module>
-        <module>springCloud-configServer</module>
-        <module>../springCloud-configClient</module>
+        <module>springCloud-configClient</module>
+        <module>SpringCloud-trace-1</module>
+        <module>../springCloud-trace-2</module>
     </modules>
 
 
