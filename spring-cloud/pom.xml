@@ -25,6 +25,8 @@
         <module>springCloud-configClient</module>
         <module>SpringCloud-trace-1</module>
         <module>../springCloud-trace-2</module>
+        <module>springCloud-zipkin-server</module>
+        <module>springCloud-trace-2</module>
     </modules>
 
 
