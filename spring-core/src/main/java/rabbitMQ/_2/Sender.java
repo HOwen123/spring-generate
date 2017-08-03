@@ -50,7 +50,7 @@ public class Sender {
         // 参数2 routingKey ： 路由键
         // 参数3 props ： 消息的其他参数
         // 参数4 body ： 消息体
-        for(int i = 0 ; i < 100000 ; i++){
+        for(int i = 0 ; i < 10 ; i++){
             message = message + i;
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
         }
